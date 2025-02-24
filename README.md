@@ -1,15 +1,44 @@
 # Aquarium Lab
 #### Name:
-#### TableBuddies+™
-- TB+ 0:
-- TB+ 1:
-- TB+ 2:
+#### Period:
 
 ---
 ### Instructions
-1. Put your name and the names of your TableBuddies+™ above.
-2. Copy your Aquarium program into this repository, add, commit and push.
-   - This should include a driver file, `Tank` class, `Animal` class and two subclasses.
-3. Once all your TableBuddies+™ have dones this, copy the subclasses from all your TableBuddies+™ into your program.
-4. Work together to modify your programs so that all the subclasses work under the same `Animal` superclass.
-5. In your drive file, add Animals using the `keyPressed` function. Map each Animal type to a number key, starting at 1. When the user presses a number key, add the animal of that type at the current mouse coordinates.
+Before break, your work involved making 5 classes in a class hierarchy to be placed inside a fish tank program. for this lab, you will create the fish tank program and use the classes you created in it. Your submission must have the following components:
+- The class hierarchy as described in [work05](https://www.stuycs.org/nextcs-dw/2025/02/12/a05.html), including the superclasses `Organism`, `MovingOrganism`, and the three custom subclasses.
+  - All fields and methods should be used in some significant way (i.e. the `health` field and `age()` method present in `Organism` should have some effect on the objects), including fields and methods you add to your subclasses.
+- Modify this README.md file to include the full class hierarchy UML diagram for your `Organism` tree. (further instructions below).
+- A `Tank` class that should be able to:
+  - Store organisms using either array(s) or `ArrayList`(s).
+  - Have a well defined "floor" section and a well defined "water" section. Your subclasses should either stay within the water (like a fish) or  floor (like a crab) sections, _or_ move differently if it is in the water or floor (like a turtle).
+  - Control the organisms contained within.
+- A driver file that will:
+  - Create a new tank.
+  - Populate the tank with some amount of organisms (this can be handled by the tank constructor if you'd like).
+  - Provide a way to add new organisms to the take as follows:
+    - Clicking the mouse will add an organism at the mouse's position.
+    - The type of organism to be add should be set by pressing the number keys (i.e. `1` would be fish, `2` would be turtle, and `3` would be plant.)
+    - The current type of organism to be added should be displayed in the upper left corner of the screen.
+
+
+### Class Hierarchy Diagram
+For [work04] you used mermaid to create class diagrams. You will use it here to create the UML class hierarchy diagram for your classes.
+- You can find documentation on how to make these diagrams [here](https://mermaid.js.org/syntax/classDiagram.html)
+- You can find a live editor [here](https://mermaid.live/edit)
+- Below is the beginning of your diagram:
+
+```mermaid
+classDiagram
+  Organism <|-- MovingOrganism
+  class Organism {
+      int size
+      PVector position
+      int health
+
+      Organism(int s, int x, int y, int h)
+      display()
+      age()
+  }
+  class MovingOrganism {  
+  }
+```
